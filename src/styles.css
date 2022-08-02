@@ -1,0 +1,91 @@
+body {
+  background: radial-gradient(
+    592px at 48.2% 50%,
+    rgba(255, 255, 249, 0.6) 0%,
+    rgb(160, 199, 254) 74.6%
+  );
+  background-image: url(file:///C:/Users/Anastasiia/Desktop/weatherapp/images/weather.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer {
+  padding-top: 20px;
+}
+
+.location {
+  text-decoration: none;
+  font-size: 24px;
+}
+.location:hover {
+  text-decoration: underline;
+}
+.contanier {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 150px;
+  max-width: 740px;
+}
+.weather-contanier {
+  background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+  border-radius: 20px;
+  font-family: "Fuzzy Bubbles", cursive;
+  font-size: 18px;
+  margin: 20px 0;
+  max-width: 630px;
+  padding: 20px 16px 24px;
+  opacity: 0.9;
+}
+
+.cities {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 20px;
+}
+.city {
+  display: inline;
+  margin: 0 20px 0 0;
+  font-weight: bold;
+}
+.current-city {
+  font-size: 34px;
+  font-weight: bold;
+}
+.current-temperature {
+  font-size: 24px;
+  font-weight: bold;
+}
+.temperature {
+  text-decoration: none;
+  font-size: 24px;
+}
+.temperature:hover {
+  text-decoration: underline;
+}
+.fa-solid {
+  color: #a7c4fc;
+  font-size: 30px;
+}
+
+.row-forecast {
+  display: flex;
+}
+
+.forecast-day {
+  text-align: center;
+  font-weight: bold;
+}
+.forecast-icon {
+  text-align: center;
+  color: #a7c4fc;
+  font-size: 30px;
+}
+.forecast-temperature {
+  text-align: center;
+}
+.forecast-tempearture-max {
+  font-weight: bold;
+}
