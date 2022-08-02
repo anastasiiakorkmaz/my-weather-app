@@ -4,7 +4,7 @@ body {
     rgba(255, 255, 249, 0.6) 0%,
     rgb(160, 199, 254) 74.6%
   );
-  background-image: url(file:///C:/Users/Anastasiia/Desktop/weatherapp/images/weather.jpg);
+  background-image: url("weather.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
