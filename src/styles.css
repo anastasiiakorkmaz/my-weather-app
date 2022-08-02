@@ -13,6 +13,11 @@ footer {
   padding-top: 20px;
 }
 
+a {
+  color: #1d69d6;
+  text-decoration: none;
+}
+
 .location {
   text-decoration: none;
   font-size: 24px;
