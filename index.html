@@ -30,14 +30,6 @@
   <body>
     <div class="contanier">
       <div class="weather-contanier">
-        <header>
-          <ul class="cities">
-            <li class="city"><a href="" class="location">Kyiv</a></li>
-            <li class="city"><a href="" class="location">Milan</a></li>
-            <li class="city"><a href="" class="location">Bern</a></li>
-            <li class="city"><a href="" class="location">Miami</a></li>
-          </ul>
-        </header>
         <form id="search-form">
           <div class="row g-3">
             <div class="col-sm-6">
@@ -60,32 +52,40 @@
             </div>
           </div>
         </form>
+        <div class="overview">
+          <h1 id="current-city"></h1>
+          <ul>
+            <li>Last updated: <span class="date"></span></li>
+            <li id="sky-weather"></li>
+          </ul>
+        </div>
         <div class="row">
           <div class="col-6">
-            <br />
-            <div class="current-city">
-              <span id="current-city"></span>
-              <img src="./images/clear-day.svg" alt="sun" width="56" />
+            <div class="clearfix weather-temperature">
+              <img src="./images/clear-day.svg" alt="sun" class="float-left" />
+              <div class="float-left">
+                <strong class="current-temperature" id="currentTemp"></strong>
+                <span class="units">
+                  <a href="" class="temperature" id="celcius">°C</a>|
+                  <a href="" class="temperature" id="fahrenheit">°F</a>
+                </span>
+              </div>
             </div>
-            <div class="date"></div>
-            <span id="sky-weather"></span>
-            <span class="current-temperature" id="currentTemp"></span>
-            <span class="units">
-              <a href="" class="temperature" id="celcius">°C</a>|
-              <a href="" class="temperature" id="fahrenheit">°F</a>
-            </span>
           </div>
           <div class="col-6">
-            <br />
-            <div class="current-weather">
-              <img src="./images/humidity.svg" alt="humidity" width="42" />
-              Humidity <span id="humidity"></span>%
-            </div>
-            <br />
-            <div class="current-weather" id="wind">
-              <img src="./images/wind.svg" alt="wind" width="42" />
-              Wind: <span id="wind-speed"></span>km/h
-            </div>
+            <ul>
+              <li>
+                <img
+                  src="./images/humidity.svg"
+                  alt="humidity"
+                  width="42"
+                />Humidity: <span id="humidity"></span>%
+              </li>
+              <li>
+                <img src="./images/wind.svg" alt="wind" width="42" />Wind:
+                <span id="wind-speed"></span> m/h
+              </li>
+            </ul>
           </div>
         </div>
         <footer>
