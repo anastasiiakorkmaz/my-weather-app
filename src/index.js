@@ -25,6 +25,36 @@ let currentDate = document.querySelector(".date");
 let currentTime = new Date();
 currentDate.innerHTML = formatDate(currentTime);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-sm-2">
+              <div class="forecast-day">${day}</div>
+              <div class="forecast-icon">
+                <img
+                  src="./images/partly-cloudy-day-rain.svg"
+                  alt="partly-cloudy-day-rain"
+                  width="42"
+                />
+              </div>
+              <div class="forecast-temperature">
+                <span class="forecast-tempearture-max"> 25° </span>
+                <span class="forecast-tempearture-min"> 20° </span>
+              </div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeatherData(response) {
   let temperatureElement = document.querySelector("#currentTemp");
   let cityElement = document.querySelector("#current-city");
@@ -106,3 +136,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Kyiv");
+displayForecast();

@@ -91,10 +91,6 @@ h1 {
   font-weight: bold;
 }
 
-.row-forecast {
-  display: flex;
-}
-
 .forecast-tempearture-min {
   opacity: 0.6;
 }
