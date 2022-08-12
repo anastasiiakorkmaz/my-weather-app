@@ -50,6 +50,14 @@ h1 {
   opacity: 0.9;
 }
 
+#search-button {
+  background-color: #589eb8;
+  border-color: #589eb8;
+}
+#current-button {
+  background-color: #edbd33;
+  border-color: #edbd33;
+}
 #current-city {
   font-size: 34px;
   font-weight: bold;
