@@ -85,22 +85,16 @@ h1 {
   top: -34px;
 }
 
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
 .row-forecast {
   display: flex;
 }
 
-.forecast-day {
-  text-align: center;
-  font-weight: bold;
-}
-.forecast-icon {
-  text-align: center;
-  color: #a7c4fc;
-  font-size: 30px;
-}
-.forecast-temperature {
-  text-align: center;
-}
-.forecast-tempearture-max {
-  font-weight: bold;
+.forecast-tempearture-min {
+  opacity: 0.6;
 }
