@@ -49,6 +49,9 @@ h1 {
   padding: 20px 16px 24px;
   opacity: 0.9;
 }
+.overview {
+  margin-bottom: 20px;
+}
 
 #search-button {
   background-color: #589eb8;
@@ -64,7 +67,7 @@ h1 {
 }
 
 .weather-temperature img {
-  margin-right: 1px;
+  margin-right: 10px;
   height: 64px;
   width: 64px;
 }
@@ -82,7 +85,7 @@ h1 {
 .weather-temperature .units {
   position: relative;
   font-size: 24px;
-  top: -34px;
+  top: -4px;
 }
 
 .weather-forecast {
