@@ -25,34 +25,57 @@ let currentDate = document.querySelector(".date");
 let currentTime = new Date();
 currentDate.innerHTML = formatDate(currentTime);
 
-function displayForecast() {
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Thu", "Wed", "Thu", "Fri", "Sat"];
+
+  let day = date.getDay();
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
-
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col-sm-2">
-              <div class="forecast-day">${day}</div>
+              <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
               <div class="forecast-icon">
                 <img
-                  src="./images/partly-cloudy-day-rain.svg"
+                  src="./images/${forecastDay.weather[0].icon}.svg"
                   alt="partly-cloudy-day-rain"
                   width="42"
                 />
               </div>
               <div class="forecast-temperature">
-                <span class="forecast-tempearture-max"> 25° </span>
-                <span class="forecast-tempearture-min"> 20° </span>
+                <span class="forecast-tempearture-max"> ${Math.round(
+                  forecastDay.temp.max
+                )}° </span>
+                <span class="forecast-tempearture-min"> ${Math.round(
+                  forecastDay.temp.min
+                )}° </span>
               </div>
             </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "79ee03a958e204e023122acbd595e9dc";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeatherData(response) {
@@ -75,6 +98,8 @@ function showWeatherData(response) {
     `./images/${response.data.weather[0].icon}.svg`
   );
   iconElement.setAttribute("alt", response.data.weather[0].main);
+
+  getForecast(response.data.coord);
 }
 
 function searchCity(city) {
@@ -136,4 +161,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Kyiv");
-displayForecast();
